@@ -1,6 +1,6 @@
-package com.spring.professional.exam.tutorial.module03.question05.dao;
+package question05.dao;
 
-import com.spring.professional.exam.tutorial.module03.question05.ds.Employee;
+import question05.ds.Employee;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -14,6 +14,7 @@ import java.util.Map;
 
 @Repository
 public class EmployeeDao {
+
     private JdbcTemplate jdbcTemplate;
 
     @Autowired

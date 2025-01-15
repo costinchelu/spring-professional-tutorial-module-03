@@ -24,6 +24,8 @@ public class EmployeeDao {
     }
 
     // example of callback to interface RowMapper using an anonymous class implementation
+    // RowMapper has one method that will use the ResultSet to map data to a type
+    // we can use a lambda instead, or even we can extract a method that will map data to the type
     public List<Employee> findEmployees() {
         return jdbcTemplate.query(
                 "select employee_id, first_name, last_name, email, phone_number, hire_date, salary from employee",
@@ -45,6 +47,8 @@ public class EmployeeDao {
     }
 
     // example of callback using an inner class implementing a RowCallbackHandler
+    // RowCallbackHandler has a method that will not return a type (like the RowMapper's mapRow method
+    // we need to create a stateful object/component and keep the processing result in that object (in this case an inner class)
     public float findAverageSalaryRowByRow() {
         AverageSalaryRowCallbackHandler averageSalaryRowCallbackHandler = new AverageSalaryRowCallbackHandler();
 
@@ -57,6 +61,7 @@ public class EmployeeDao {
     }
 
     // example of callback using an inner class implementing a ResultSetExtractor
+    // With this interface - we are processing the entire ResultSet
     public Float findAverageSalaryCalculatedOnEntireResultSet() {
         return jdbcTemplate.query(
                 "select salary from employee",
@@ -64,6 +69,7 @@ public class EmployeeDao {
         );
     }
 
+    // streamlined method to get data using a stream processing
     public double findAverageSalaryModernImplementation() {
         return jdbcTemplate.queryForList(
                 "select salary from employee",
@@ -74,6 +80,7 @@ public class EmployeeDao {
                 .orElse(0f);
     }
 
+    // instead of processing data in a stream, we can use a sql function to directly get the data
     public double findAverageSalarySqlLevel() {
         return jdbcTemplate.queryForObject(
                 "select avg(salary) from employee",
@@ -122,6 +129,7 @@ public class EmployeeDao {
         );
     }
 
+    // stateful component
     private static class AverageSalaryRowCallbackHandler implements RowCallbackHandler {
 
         private float salarySum = 0;
@@ -133,11 +141,13 @@ public class EmployeeDao {
             ++salariesCount;
         }
 
+        // used to return the state of the component
         public float getAverageSalary() {
             return salarySum / (float) salariesCount;
         }
     }
 
+    // stateless component
     private static class AverageSalaryResultSetExtractor implements ResultSetExtractor<Float> {
 
         @Override

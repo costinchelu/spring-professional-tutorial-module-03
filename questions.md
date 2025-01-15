@@ -9,4 +9,5 @@
 | 03.04           | What is a callback?                                                                |
 |                 | What are the three JdbcTemplate callback interfaces that can be used with queries? |
 |                 | What is each used for?                                                             |
-| 03.05           |                                                                                    |
+| 03.05           | Can you execute a plain statement with the JDBC template?                          |
+|                 |                                                                                    |
