@@ -1,6 +1,6 @@
-package com.spring.professional.exam.tutorial.module03.question06;
+package question06;
 
-import com.spring.professional.exam.tutorial.module03.question06.service.EmployeeReportService;
+import question06.service.EmployeeReportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

@@ -1,4 +1,4 @@
-package com.spring.professional.exam.tutorial.module03.question06.dao;
+package question06.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -8,6 +8,7 @@ import javax.sql.DataSource;
 
 @Repository
 public class EmployeeDao {
+
     private JdbcTemplate jdbcTemplate;
 
     @Autowired

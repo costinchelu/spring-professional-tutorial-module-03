@@ -1,4 +1,4 @@
-package com.spring.professional.exam.tutorial.module03.question06.aspect;
+package question06.aspect;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

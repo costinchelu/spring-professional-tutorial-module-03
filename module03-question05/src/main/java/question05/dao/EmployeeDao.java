@@ -30,7 +30,9 @@ public class EmployeeDao {
     }
 
     public List<String> findEmployeesEmails() {
-        return jdbcTemplate.queryForList("select email from employee", String.class);
+        return jdbcTemplate.queryForList(
+                "select email from employee",
+                String.class);
     }
 
     public Employee findEmployeeWithHighestSalary() {
@@ -69,8 +71,8 @@ public class EmployeeDao {
     public int updateDummyRecord(Integer id, String firstName) {
         return jdbcTemplate.update(
                 "update employee set first_name = ? where employee_id = ?",
-                new Object[]{firstName, id}
-        );
+                firstName,
+                id);
     }
 
     public int[] updateRecordsWithDummyData() {
