@@ -1,22 +1,31 @@
-package com.spring.professional.exam.tutorial.module03.question10.service;
+package question10.service;
 
-import com.spring.professional.exam.tutorial.module03.question10.dao.EmployeeDao;
-import com.spring.professional.exam.tutorial.module03.question10.ds.Employee;
+import question10.dao.EmployeeDao;
+import question10.ds.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Date;
+import java.util.List;
 
 @Service
 public class EmployeeService {
 
-    @Autowired
-    private EmployeeDao employeeDao;
+    private final EmployeeDao employeeDao;
+
+    public EmployeeService(EmployeeDao employeeDao) {
+        this.employeeDao = employeeDao;
+    }
 
     public void printEmployees() {
-        System.out.println("Printing list of employees");
-        employeeDao.findAllEmployees().forEach(System.out::println);
+        List<Employee> allEmployees = employeeDao.findAllEmployees();
+        if (allEmployees.isEmpty()) {
+            System.out.println("No employees found");
+        } else {
+            System.out.println("Printing list of employees");
+            allEmployees.forEach(System.out::println);
+        }
     }
 
     public void deleteAllEmployees() {

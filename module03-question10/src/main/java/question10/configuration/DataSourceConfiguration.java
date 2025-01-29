@@ -1,4 +1,4 @@
-package com.spring.professional.exam.tutorial.module03.question10.configuration;
+package question10.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 
+// in plain Spring projects, we need a bean returning a PlatformTransactionManager
 @Configuration
 @EnableTransactionManagement
 public class DataSourceConfiguration {

@@ -1,6 +1,6 @@
-package com.spring.professional.exam.tutorial.module03.question10.dao;
+package question10.dao;
 
-import com.spring.professional.exam.tutorial.module03.question10.ds.Employee;
+import question10.ds.Employee;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -12,6 +12,7 @@ import java.util.List;
 
 @Repository
 public class EmployeeDao {
+
     private JdbcTemplate jdbcTemplate;
 
     @Autowired
@@ -20,7 +21,7 @@ public class EmployeeDao {
     }
 
     public List<Employee> findAllEmployees() {
-        return jdbcTemplate.query("select employee_id, first_name, last_name, email, phone_number, hire_date, salary from employee", this::mapEmployee);
+        return jdbcTemplate.query("SELECT employee_id, first_name, last_name, email, phone_number, hire_date, salary FROM employee", this::mapEmployee);
     }
 
     public void saveEmployee(Employee employee) {
@@ -28,8 +29,8 @@ public class EmployeeDao {
             throw new IllegalArgumentException("Employee Id has to be greater than zero");
 
         int numberOfRecordsInserted = jdbcTemplate.update(
-                "insert into employee(employee_id, first_name, last_name, email, phone_number, hire_date, salary) " +
-                        "values (?, ?, ?, ?, ?, ?, ?)",
+                "INSERT INTO employee(employee_id, first_name, last_name, email, phone_number, hire_date, salary) " +
+                        "VALUES (?, ?, ?, ?, ?, ?, ?)",
                 employee.getId(),
                 employee.getFirstName(),
                 employee.getLastName(),
@@ -40,15 +41,15 @@ public class EmployeeDao {
         );
 
         if (numberOfRecordsInserted == 1)
-            System.out.println(String.format("Saved employee [%d]", employee.getId()));
+            System.out.printf("Saved employee [%d]%n", employee.getId());
         else
             throw new IllegalStateException(String.format("Expected 1 record to be inserted, instead retrieved [%d] number of records inserted", numberOfRecordsInserted));
     }
 
     public void deleteAllEmployees() {
-        int numberOfDeletedRows = jdbcTemplate.update("delete from employee");
+        int numberOfDeletedRows = jdbcTemplate.update("DELETE FROM employee");
 
-        System.out.println(String.format("Employees deleted, number of deleted rows = [%d]", numberOfDeletedRows));
+        System.out.printf("Employees deleted, number of deleted rows = [%d]%n", numberOfDeletedRows);
     }
 
     @SneakyThrows
