@@ -1,4 +1,4 @@
-package com.spring.professional.exam.tutorial.module03.question11.aspect;
+package question11.aspect;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -11,9 +11,10 @@ import java.sql.Connection;
 @Component
 @Aspect
 public class DataSourceAspect {
+
     @Around("target(javax.sql.DataSource)")
     public Object aroundDataSource(ProceedingJoinPoint joinPoint) throws Throwable {
-        System.out.println("Data Source Trace: " + joinPoint.getSignature());
+        System.out.println("<AOP>Data Source Trace: " + joinPoint.getSignature());
 
         Object returnObject = joinPoint.proceed();
         if (returnObject instanceof Connection) {

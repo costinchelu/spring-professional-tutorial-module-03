@@ -18,6 +18,7 @@ public class Runner {
             System.out.println("Exception during saving employees: " + e.getMessage());
         }
         employeeService.printEmployees();
+
         employeeService.deleteAllEmployees();
 
         try {
@@ -26,6 +27,5 @@ public class Runner {
             System.out.println("Exception during saving employees: " + e.getMessage());
         }
         employeeService.printEmployees();
-        employeeService.deleteAllEmployees();
     }
 }

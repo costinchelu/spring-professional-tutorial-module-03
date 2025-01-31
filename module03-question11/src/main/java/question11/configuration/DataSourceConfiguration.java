@@ -1,4 +1,4 @@
-package com.spring.professional.exam.tutorial.module03.question11.configuration;
+package question11.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
