@@ -11,6 +11,7 @@ import static com.spring.professional.exam.tutorial.module03.question12.util.Cou
 
 @Component
 public class TransactionIsolationExampleInvoker {
+
     @Autowired
     private TransactionIsolationExample transactionIsolationExample;
 
@@ -19,20 +20,21 @@ public class TransactionIsolationExampleInvoker {
     public void execute() {
         System.out.println("Starting Repeatable Read Example");
 
+        // 1st thread = read operations
         executorService.execute(() -> {
             transactionIsolationExample.readOperations();
             transactionIsolationExample.nextReadOperation();
-
             countDown(transactionIsolationExample.getReadWriteLatch());
         });
 
+        // 2nd thread = write operations
         executorService.execute(() -> {
             transactionIsolationExample.writeOperations();
             countDown(transactionIsolationExample.getWriteDoneAndCommittedLatch());
-
             countDown(transactionIsolationExample.getReadWriteLatch());
         });
 
+        // main thread waits for the both threads to finish
         await(transactionIsolationExample.getReadWriteLatch());
 
         executorService.shutdown();

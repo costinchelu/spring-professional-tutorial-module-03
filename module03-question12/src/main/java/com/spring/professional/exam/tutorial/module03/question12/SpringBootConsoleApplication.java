@@ -1,6 +1,7 @@
 package com.spring.professional.exam.tutorial.module03.question12;
 
 import com.spring.professional.exam.tutorial.module03.question12.service.TransactionIsolationExampleInvoker;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

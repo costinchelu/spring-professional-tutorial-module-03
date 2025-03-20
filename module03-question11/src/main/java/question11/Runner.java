@@ -16,7 +16,7 @@ public class Runner {
         EmployeeService employeeService = context.getBean(EmployeeService.class);
 
         employeeService.saveEmployeeWithoutTransaction();
-
+        System.out.println("------------------------------------------------");
         employeeService.saveEmployeeInTransaction();
     }
 }

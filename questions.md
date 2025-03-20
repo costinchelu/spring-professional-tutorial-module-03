@@ -21,7 +21,7 @@
 |                 | What does @Transactional do?                                                                                 |
 |                 | What is the PlatformTransactionManager?                                                                      |
 | 03.11           | Is the JDBC template able to participate in an existing transaction?                                         |
-|                 |                                                                                                              |
-|                 |                                                                                                              |
+| 03.12           | What is a transaction isolation level?                                                                       |
+|                 | How many do we have and how are they ordered?                                                                |
 |                 |                                                                                                              |
 |                 |                                                                                                              |

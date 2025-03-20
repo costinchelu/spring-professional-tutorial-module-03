@@ -10,6 +10,7 @@ import java.util.concurrent.CountDownLatch;
 
 @Getter
 abstract class AbstractIsolationExample {
+
     @Autowired
     private EmployeeDao employeeDao;
 

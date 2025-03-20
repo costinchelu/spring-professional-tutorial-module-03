@@ -13,9 +13,14 @@ import static com.spring.professional.exam.tutorial.module03.question12.util.Cou
 //@Transactional(isolation = Isolation.READ_COMMITTED)
 //@Transactional(isolation = Isolation.READ_UNCOMMITTED)
 public class TransactionIsolationExample extends AbstractIsolationExample {
+
+    // whole class is annotated with @Transactional so calling readOperations will start the transaction
+
     public void readOperations() {
         System.out.println("Starting Reading Thread");
 
+        // read data (all employees) before the second read operation
+        // countDown latches are used to synchronize read operation with the write operations
         System.out.println("First Read Operation - second transaction did not save data yet");
         readOperation();
         countDown(fistReadOnUnsavedAndNotCommittedLatch);
@@ -40,11 +45,15 @@ public class TransactionIsolationExample extends AbstractIsolationExample {
     public void writeOperations() {
         System.out.println("Starting Writing Thread");
 
+        // wait for the first read operation to be made
         await(fistReadOnUnsavedAndNotCommittedLatch);
         System.out.println("Write Operation");
+        // make the write (update)
         writeOperation();
+        // wait for the second read to be made
         countDown(writeDoneNotCommittedLatch);
 
+        // wait for the second read operation to be made
         await(secondReadOnSavedButNotCommittedLatch);
 
         System.out.println("Finishing Writing Thread, Write Transaction will be committed");

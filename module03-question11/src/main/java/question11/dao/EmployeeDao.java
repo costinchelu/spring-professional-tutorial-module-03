@@ -34,7 +34,7 @@ public class EmployeeDao {
         );
 
         if (numberOfRecordsInserted == 1)
-            System.out.printf("Saved employee [%d]%n%n", employee.getId());
+            System.out.printf("Saved employee [%d]%n", employee.getId());
         else
             throw new IllegalStateException(
                     String.format("Expected 1 record to be inserted, instead retrieved [%d] number of records inserted",

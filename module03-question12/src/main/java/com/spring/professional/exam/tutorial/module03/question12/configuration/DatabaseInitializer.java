@@ -15,6 +15,7 @@ public class DatabaseInitializer {
 
     @Value("classpath:/db-schema.sql")
     private Resource schemaScript;
+
     @Value("classpath:/db-test-data.sql")
     private Resource dataScript;
 
@@ -27,9 +28,9 @@ public class DatabaseInitializer {
     }
 
     private DatabasePopulator databasePopulator() {
-        final ResourceDatabasePopulator databasePopulator = new ResourceDatabasePopulator();
-        databasePopulator.addScript(schemaScript);
-        databasePopulator.addScript(dataScript);
-        return databasePopulator;
+        final ResourceDatabasePopulator databasePopulatorImpl = new ResourceDatabasePopulator();
+        databasePopulatorImpl.addScript(schemaScript);
+        databasePopulatorImpl.addScript(dataScript);
+        return databasePopulatorImpl;
     }
 }
