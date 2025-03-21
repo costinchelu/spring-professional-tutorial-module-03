@@ -18,7 +18,7 @@ public class TransactionIsolationExampleInvoker {
     private ExecutorService executorService = Executors.newFixedThreadPool(2);
 
     public void execute() {
-        System.out.println("Starting Repeatable Read Example");
+        System.out.println(">>> Starting Repeatable Read Example");
 
         // 1st thread = read operations
         executorService.execute(() -> {
@@ -38,7 +38,5 @@ public class TransactionIsolationExampleInvoker {
         await(transactionIsolationExample.getReadWriteLatch());
 
         executorService.shutdown();
-
-        System.out.println("Finishing Repeatable Read Example");
     }
 }
