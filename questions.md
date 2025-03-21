@@ -23,5 +23,10 @@
 | 03.11           | Is the JDBC template able to participate in an existing transaction?                                         |
 | 03.12           | What is a transaction isolation level?                                                                       |
 |                 | How many do we have and how are they ordered?                                                                |
+| 03.13           | What is _@EnableTransactionManagement_ for?                                                                  |
+| 03.14           | What does transaction propagation mean?                                                                      |
+| 03.15           | What happens if one @Transactional annotated method is calling another @Transactional annotated method       |
+|                 | on the same object instance?                                                                                 |
+|                 |                                                                                                              |
 |                 |                                                                                                              |
 |                 |                                                                                                              |
