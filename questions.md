@@ -52,11 +52,11 @@
 | 03.19           | What is the default rollback policy in a JUnit 4 & 5 test (@RunWith(SpringJUnit4ClassRunner.class) or        |
 |                 | @ExtendWith(SpringExtension.class)) and annotate your @Test annotated method with @Transactional?            |
 |                 |                                                                                                              |
-| 03.20           |                                                                                                              |
+| 03.20           | Why is the term "unit of work" so important and why does JDBC AutoCommit violate this pattern?               |
 |                 |                                                                                                              |
+| 03.21           | What do you need to do in (vanilla) Spring Framework if you would like to work with JPA?                     |
 |                 |                                                                                                              |
-|                 |                                                                                                              |
-|                 |                                                                                                              |
+| 03.22           |                                                                                                              |
 |                 |                                                                                                              |
 |                 |                                                                                                              |
 |                 |                                                                                                              |
