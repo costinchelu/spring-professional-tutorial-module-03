@@ -60,13 +60,18 @@
 |                 |                                                                                                              |
 | 03.23           | Which PlatformTransactionManager(s) can you use with JPA?                                                    |
 |                 |                                                                                                              |
-| 03.24           |                                                                                                              |
+| 03.24           | What do you have to configure to use JPA with Spring?                                                        |
+|                 | How does Spring Boot make this easier?                                                                       |
 |                 |                                                                                                              |
+| 03.25           | What is a Repository interface?                                                                              |
 |                 |                                                                                                              |
+| 03.26           | How do you define a Repository interface?                                                                    |
+|                 | Why is it an interface not a class?                                                                          |
 |                 |                                                                                                              |
+| 03.27           | What is the naming convention for finder methods in a Repository interface?                                  |
 |                 |                                                                                                              |
+| 03.28           | How are Spring Data Repositories implemented by Spring at runtime?                                           |
 |                 |                                                                                                              |
-
-
+| 03.29           | What is @Query used for?                                                                                     |
 
 TESTED WITH JAVA 11

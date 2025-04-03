@@ -16,7 +16,6 @@ public class Runner {
         EmployeeService employeeService = context.getBean(EmployeeService.class);
 
         employeeService.saveEmployee();
-
         employeeService.listEmployee();
     }
 }

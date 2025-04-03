@@ -16,10 +16,11 @@ import javax.sql.DataSource;
 @Configuration
 @EnableJpaRepositories(basePackages = {"question27.dao"})
 public class JpaConfiguration {
+
     @Bean
     @Autowired
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
-        LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
+        var em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource);
         em.setPackagesToScan("question27.ds");
 
@@ -31,7 +32,7 @@ public class JpaConfiguration {
 
     @Bean
     public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
-        JpaTransactionManager transactionManager = new JpaTransactionManager();
+        var transactionManager = new JpaTransactionManager();
         transactionManager.setEntityManagerFactory(emf);
 
         return transactionManager;

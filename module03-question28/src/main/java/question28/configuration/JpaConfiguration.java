@@ -9,20 +9,25 @@ import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
+import question28.dao.base.CustomBaseJpaRepository;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
+// by default, the base class for the repository is SimpleJpaRepository
+// but we can override this default behaviour by pointing to a custom base class (repositoryBaseClass)
+// this override will be global (for all Dao in the project)
 @Configuration
 @EnableJpaRepositories(
         //repositoryBaseClass = CustomBaseJpaRepository.class,
         basePackages = {"question28.dao"}
 )
 public class JpaConfiguration {
+
     @Bean
     @Autowired
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
-        LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
+        var em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource);
         em.setPackagesToScan("question28.ds");
 
@@ -34,7 +39,7 @@ public class JpaConfiguration {
 
     @Bean
     public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
-        JpaTransactionManager transactionManager = new JpaTransactionManager();
+        var transactionManager = new JpaTransactionManager();
         transactionManager.setEntityManagerFactory(emf);
 
         return transactionManager;

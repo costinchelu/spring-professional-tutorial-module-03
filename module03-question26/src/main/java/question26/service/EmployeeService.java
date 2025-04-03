@@ -1,5 +1,6 @@
 package question26.service;
 
+import lombok.AllArgsConstructor;
 import question26.dao.EmployeeDao;
 import question26.ds.Employee;
 import question26.ds.EmployeeKey;
@@ -8,10 +9,10 @@ import org.springframework.stereotype.Service;
 
 import java.sql.Date;
 
+@AllArgsConstructor
 @Service
 public class EmployeeService {
 
-    @Autowired
     private EmployeeDao employeeDao;
 
     public void saveEmployee() {

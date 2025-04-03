@@ -2,6 +2,7 @@ package question29.ds;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -10,6 +11,7 @@ import javax.persistence.Id;
 import java.sql.Date;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Entity
@@ -24,8 +26,4 @@ public class Employee {
     private String phoneNumber;
     private Date hireDate;
     private float salary;
-
-    @SuppressWarnings("unused")
-    public Employee() {
-    }
 }

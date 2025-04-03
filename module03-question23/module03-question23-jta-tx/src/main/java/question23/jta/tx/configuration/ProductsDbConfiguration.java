@@ -43,7 +43,7 @@ public class ProductsDbConfiguration {
 
         AtomikosDataSourceBean atomikosDataSourceBean = new AtomikosDataSourceBean();
         atomikosDataSourceBean.setXaDataSource(mysqlXADataSource);
-        atomikosDataSourceBean.setUniqueResourceName("productsDb");
+        atomikosDataSourceBean.setUniqueResourceName("spring_tutorial_products");
         return atomikosDataSourceBean;
     }
 }

@@ -1,5 +1,6 @@
 package question28.dao.custom;
 
+import lombok.AllArgsConstructor;
 import question28.ds.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -8,9 +9,12 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
+// we can customize the default implementation of just one of the repositories by creating
+// a custom implementation of the repository and here we customize the findByFirstNameAndLastName method
+
+@AllArgsConstructor
 public class CustomEmployeeFindRepositoryImpl implements CustomEmployeeFindRepository {
 
-    @Autowired
     private EntityManager entityManager;
 
     @Override

@@ -10,7 +10,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.io.Serializable;
 
-@SuppressWarnings("unused")
+//@SuppressWarnings("unused")
 public class CustomBaseJpaRepository<T, ID extends Serializable> extends SimpleJpaRepository<T, ID> {
 
     private final EntityManager entityManager;

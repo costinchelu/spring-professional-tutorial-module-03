@@ -6,6 +6,7 @@ import javax.persistence.Embeddable;
 import java.io.Serializable;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Embeddable
 @Getter
 @Setter
@@ -15,8 +16,4 @@ public class EmployeeKey implements Serializable {
 
     private String firstName;
     private String lastName;
-
-    @SuppressWarnings("unused")
-    public EmployeeKey() {
-    }
 }

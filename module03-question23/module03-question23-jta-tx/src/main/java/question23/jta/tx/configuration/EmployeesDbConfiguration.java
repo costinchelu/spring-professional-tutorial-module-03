@@ -43,7 +43,7 @@ public class EmployeesDbConfiguration {
 
         AtomikosDataSourceBean atomikosDataSourceBean = new AtomikosDataSourceBean();
         atomikosDataSourceBean.setXaDataSource(mysqlXADataSource);
-        atomikosDataSourceBean.setUniqueResourceName("employeesDb");
+        atomikosDataSourceBean.setUniqueResourceName("spring_tutorial_employees");
         return atomikosDataSourceBean;
     }
 }
