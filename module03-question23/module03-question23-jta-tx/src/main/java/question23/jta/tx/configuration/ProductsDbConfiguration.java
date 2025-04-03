@@ -36,9 +36,9 @@ public class ProductsDbConfiguration {
     @Bean
     public DataSource productsDataSource() throws SQLException {
         MysqlXADataSource mysqlXADataSource = new MysqlXADataSource();
-        mysqlXADataSource.setURL("jdbc:mysql://localhost:3306/spring-tutorial-products");
-        mysqlXADataSource.setUser("spring-tutorial");
-        mysqlXADataSource.setPassword("spring-tutorial");
+        mysqlXADataSource.setURL("jdbc:mysql://192.168.1.170:3306/spring_tutorial_products");
+        mysqlXADataSource.setUser("user");
+        mysqlXADataSource.setPassword("pass");
         mysqlXADataSource.setPinGlobalTxToPhysicalConnection(true);
 
         AtomikosDataSourceBean atomikosDataSourceBean = new AtomikosDataSourceBean();

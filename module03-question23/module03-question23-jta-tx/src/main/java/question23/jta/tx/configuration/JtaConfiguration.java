@@ -30,7 +30,9 @@ public class JtaConfiguration {
 
     @Bean
     @Autowired
-    public PlatformTransactionManager transactionManager(UserTransaction atomikosUserTransaction, TransactionManager atomikosUserTransactionManager) {
+    public PlatformTransactionManager transactionManager(
+            UserTransaction atomikosUserTransaction,
+            TransactionManager atomikosUserTransactionManager) {
         return new JtaTransactionManager(atomikosUserTransaction, atomikosUserTransactionManager);
     }
 }

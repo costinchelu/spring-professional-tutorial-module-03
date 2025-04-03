@@ -56,8 +56,17 @@
 |                 |                                                                                                              |
 | 03.21           | What do you need to do in (vanilla) Spring Framework if you would like to work with JPA?                     |
 |                 |                                                                                                              |
-| 03.22           |                                                                                                              |
+| 03.22           | Are you able to participate in a given transaction in Spring while working with JPA?                         |
+|                 |                                                                                                              |
+| 03.23           | Which PlatformTransactionManager(s) can you use with JPA?                                                    |
+|                 |                                                                                                              |
+| 03.24           |                                                                                                              |
 |                 |                                                                                                              |
 |                 |                                                                                                              |
 |                 |                                                                                                              |
 |                 |                                                                                                              |
+|                 |                                                                                                              |
+
+
+
+TESTED WITH JAVA 11

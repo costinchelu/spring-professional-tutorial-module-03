@@ -1,5 +1,6 @@
 package question23.jta.tx.service;
 
+import lombok.AllArgsConstructor;
 import question23.jta.tx.db.employees.dao.EmployeeDao;
 import question23.jta.tx.db.employees.ds.Employee;
 import question23.jta.tx.db.products.dao.ProductDao;
@@ -10,12 +11,12 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Date;
 
+@AllArgsConstructor
 @Service
 public class WarehouseService {
 
-    @Autowired
     private EmployeeDao employeeDao;
-    @Autowired
+
     private ProductDao productDao;
 
     @Transactional
@@ -34,8 +35,8 @@ public class WarehouseService {
         productDao.save(new Product(1, "Jet Ski", 20, 4799f, true));
         System.out.println("Saved product 1");
 
-        //System.out.println("Throwing exception to revert transaction");
-        //throw new IllegalArgumentException();
+//        System.out.println("Throwing exception to revert transaction");
+//        throw new IllegalArgumentException();
     }
 
     @Transactional

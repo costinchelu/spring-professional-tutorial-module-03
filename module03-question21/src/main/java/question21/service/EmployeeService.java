@@ -13,7 +13,6 @@ public class EmployeeService {
     @Autowired
     private EmployeeDao employeeDao;
 
-
     // because we are using JPA we don't need to write for operations like insert (save) or select 8 (findAll)
     public void saveAllEmployees() {
         System.out.println("Saving all employees...");
